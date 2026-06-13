@@ -3169,7 +3169,7 @@
     #define X_MICROSTEPS     16        // 0..256
     #define X_RSENSE          0.11
     #define X_CHAIN_POS      -1        // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
-    //#define X_INTERPOLATE  true      // Enable to override 'INTERPOLATE' for the X axis
+    #define X_INTERPOLATE  true      // Enable to override 'INTERPOLATE' for the X axis
     //#define X_HOLD_MULTIPLIER 0.5    // Enable to override 'HOLD_MULTIPLIER' for the X axis
   #endif
 
@@ -3179,7 +3179,7 @@
     #define X2_MICROSTEPS   X_MICROSTEPS
     #define X2_RSENSE       X_RSENSE
     #define X2_CHAIN_POS     -1
-    //#define X2_INTERPOLATE true
+    #define X2_INTERPOLATE true
     //#define X2_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3189,7 +3189,7 @@
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
-    //#define Y_INTERPOLATE  true
+    #define Y_INTERPOLATE  true
     //#define Y_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3199,7 +3199,7 @@
     #define Y2_MICROSTEPS   Y_MICROSTEPS
     #define Y2_RSENSE       Y_RSENSE
     #define Y2_CHAIN_POS     -1
-    //#define Y2_INTERPOLATE true
+    #define Y2_INTERPOLATE true
     //#define Y2_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3209,7 +3209,7 @@
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
-    //#define Z_INTERPOLATE  true
+    #define Z_INTERPOLATE  true
     //#define Z_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3219,7 +3219,7 @@
     #define Z2_MICROSTEPS   Z_MICROSTEPS
     #define Z2_RSENSE       Z_RSENSE
     #define Z2_CHAIN_POS     -1
-    //#define Z2_INTERPOLATE true
+    #define Z2_INTERPOLATE true
     //#define Z2_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3229,7 +3229,7 @@
     #define Z3_MICROSTEPS   Z_MICROSTEPS
     #define Z3_RSENSE       Z_RSENSE
     #define Z3_CHAIN_POS     -1
-    //#define Z3_INTERPOLATE true
+    #define Z3_INTERPOLATE true
     //#define Z3_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3239,7 +3239,7 @@
     #define Z4_MICROSTEPS   Z_MICROSTEPS
     #define Z4_RSENSE       Z_RSENSE
     #define Z4_CHAIN_POS     -1
-    //#define Z4_INTERPOLATE true
+    #define Z4_INTERPOLATE true
     //#define Z4_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3249,7 +3249,7 @@
     #define I_MICROSTEPS    16
     #define I_RSENSE         0.11
     #define I_CHAIN_POS     -1
-    //#define I_INTERPOLATE  true
+    #define I_INTERPOLATE  true
     //#define I_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3259,7 +3259,7 @@
     #define J_MICROSTEPS    16
     #define J_RSENSE         0.11
     #define J_CHAIN_POS     -1
-    //#define J_INTERPOLATE  true
+    #define J_INTERPOLATE  true
     //#define J_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3269,7 +3269,7 @@
     #define K_MICROSTEPS    16
     #define K_RSENSE         0.11
     #define K_CHAIN_POS     -1
-    //#define K_INTERPOLATE  true
+    #define K_INTERPOLATE  true
     //#define K_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3279,7 +3279,7 @@
     #define U_MICROSTEPS     8
     #define U_RSENSE         0.11
     #define U_CHAIN_POS     -1
-    //#define U_INTERPOLATE  true
+    #define U_INTERPOLATE  true
     //#define U_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3289,7 +3289,7 @@
     #define V_MICROSTEPS     8
     #define V_RSENSE         0.11
     #define V_CHAIN_POS     -1
-    //#define V_INTERPOLATE  true
+    #define V_INTERPOLATE  true
     //#define V_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3299,7 +3299,7 @@
     #define W_MICROSTEPS     8
     #define W_RSENSE         0.11
     #define W_CHAIN_POS     -1
-    //#define W_INTERPOLATE  true
+    #define W_INTERPOLATE  true
     //#define W_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3308,7 +3308,7 @@
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
-    //#define E0_INTERPOLATE true
+    #define E0_INTERPOLATE true
     //#define E0_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3317,7 +3317,7 @@
     #define E1_MICROSTEPS   E0_MICROSTEPS
     #define E1_RSENSE       E0_RSENSE
     #define E1_CHAIN_POS     -1
-    //#define E1_INTERPOLATE true
+    #define E1_INTERPOLATE true
     //#define E1_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3326,7 +3326,7 @@
     #define E2_MICROSTEPS   E0_MICROSTEPS
     #define E2_RSENSE       E0_RSENSE
     #define E2_CHAIN_POS     -1
-    //#define E2_INTERPOLATE true
+    #define E2_INTERPOLATE true
     //#define E2_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3335,7 +3335,7 @@
     #define E3_MICROSTEPS   E0_MICROSTEPS
     #define E3_RSENSE       E0_RSENSE
     #define E3_CHAIN_POS     -1
-    //#define E3_INTERPOLATE true
+    #define E3_INTERPOLATE true
     //#define E3_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3344,7 +3344,7 @@
     #define E4_MICROSTEPS   E0_MICROSTEPS
     #define E4_RSENSE       E0_RSENSE
     #define E4_CHAIN_POS     -1
-    //#define E4_INTERPOLATE true
+    #define E4_INTERPOLATE true
     //#define E4_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3353,7 +3353,7 @@
     #define E5_MICROSTEPS   E0_MICROSTEPS
     #define E5_RSENSE       E0_RSENSE
     #define E5_CHAIN_POS     -1
-    //#define E5_INTERPOLATE true
+    #define E5_INTERPOLATE true
     //#define E5_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3362,7 +3362,7 @@
     #define E6_MICROSTEPS   E0_MICROSTEPS
     #define E6_RSENSE       E0_RSENSE
     #define E6_CHAIN_POS     -1
-    //#define E6_INTERPOLATE true
+    #define E6_INTERPOLATE true
     //#define E6_HOLD_MULTIPLIER 0.5
   #endif
 
@@ -3371,7 +3371,7 @@
     #define E7_MICROSTEPS   E0_MICROSTEPS
     #define E7_RSENSE       E0_RSENSE
     #define E7_CHAIN_POS     -1
-    //#define E7_INTERPOLATE true
+    #define E7_INTERPOLATE true
     //#define E7_HOLD_MULTIPLIER 0.5
   #endif
 
