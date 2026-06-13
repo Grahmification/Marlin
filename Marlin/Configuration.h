@@ -73,6 +73,20 @@
   #define MOTHERBOARD BOARD_BTT_SKR_MINI_E3_V3_0
 #endif
 
+// Generic 4-axis motion control pin overrides for SKR Mini E3 V3.0
+// Disables extruder motor (E0) pins and replace them with I rotation axis.
+// See "\src\pins\stm32g0\pins_BTT_SKR_MINI_E3_V3_0.h" for default pin configuration.
+#undef E0_STEP_PIN
+#undef E0_DIR_PIN
+#undef E0_ENABLE_PIN
+#define I_STEP_PIN PB3
+#define I_DIR_PIN PB4
+#define I_ENABLE_PIN PD1
+#define I_HARDWARE_SERIAL MSerial4 // Same as all axes
+#define I_SLAVE_ADDRESS 3 // Axis index - same as E0
+#undef FIL_RUNOUT_PIN
+#define I_MIN_PIN PC15 // Repurpose E0-STOP pin for 4th axis min endstop
+
 // @section serial
 
 /**
@@ -164,18 +178,18 @@
 #define X_DRIVER_TYPE  TMC2209
 #define Y_DRIVER_TYPE  TMC2209
 #define Z_DRIVER_TYPE  TMC2209
-//#define X2_DRIVER_TYPE A4988
+//#define X2_DRIVER_TYPE TMC2209
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
-//#define I_DRIVER_TYPE  A4988
+#define I_DRIVER_TYPE  TMC2209
 //#define J_DRIVER_TYPE  A4988
 //#define K_DRIVER_TYPE  A4988
 //#define U_DRIVER_TYPE  A4988
 //#define V_DRIVER_TYPE  A4988
 //#define W_DRIVER_TYPE  A4988
-#define E0_DRIVER_TYPE TMC2209
+//#define E0_DRIVER_TYPE TMC2209
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -1360,7 +1374,7 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 80 }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1372,7 +1386,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 5, 50 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1385,7 +1399,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 500 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1875,7 +1889,7 @@
 #define Y_ENABLE_ON LOW
 #define Z_ENABLE_ON LOW
 #define E_ENABLE_ON LOW // For all extruders
-//#define I_ENABLE_ON LOW
+#define I_ENABLE_ON LOW
 //#define J_ENABLE_ON LOW
 //#define K_ENABLE_ON LOW
 //#define U_ENABLE_ON LOW
@@ -1905,7 +1919,7 @@
 #define INVERT_X_DIR true
 #define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
-//#define INVERT_I_DIR false
+#define INVERT_I_DIR false
 //#define INVERT_J_DIR false
 //#define INVERT_K_DIR false
 //#define INVERT_U_DIR false
@@ -1947,7 +1961,7 @@
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-//#define I_HOME_DIR -1
+#define I_HOME_DIR -1
 //#define J_HOME_DIR -1
 //#define K_HOME_DIR -1
 //#define U_HOME_DIR -1
@@ -1979,6 +1993,8 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
+#define I_MIN_POS 0
+#define I_MAX_POS 360
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 250
@@ -2453,7 +2469,7 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (4*60) }
+#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (4*60), (20*60) }
 
 // Edit homing feedrates with M210 and MarlinUI menu items
 //#define EDITABLE_HOMING_FEEDRATE
