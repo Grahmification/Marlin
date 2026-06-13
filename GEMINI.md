@@ -1,7 +1,10 @@
-# Marlin 3D Printer Firmware
+# Marlin 3D Printer Firmware (BTT SKR Mini E3 V3.0 Fork)
 
 ## Project Overview
-Marlin is an open-source C++ firmware for 3D printers and other CNC machines. It is designed to be highly configurable and supports a wide range of hardware, including both 8-bit AVR and 32-bit ARM-based boards. Marlin's architecture features a robust Hardware Abstraction Layer (HAL) that allows it to run on diverse platforms while maintaining a consistent core logic.
+This repository is a fork of Marlin Firmware with the specific goal of utilizing the **BigTreeTech (BTT) SKR Mini E3 V3.0** control board for generic G-code based motion control. The firmware is being adapted to provide a flexible platform for motion control beyond traditional 3D printing.
+
+### Agent Constraints
+- **NO BUILDING OR TESTING:** The AI agent is strictly forbidden from executing build or test commands (e.g., `platformio run`, `make`, etc.). All building and testing will be performed manually by the user.
 
 ### Key Technologies
 - **Languages:** C++, Python (for build scripts).
